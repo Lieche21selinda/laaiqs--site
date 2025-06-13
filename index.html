@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liechen</title>
+
+  <!-- ✅ Favicon for tab logo -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      position: relative;
+      z-index: 1;
+      cursor: url('https://cur.cursors-4u.net/others/oth-4/oth328.cur'), auto;
+    }
+
+    @keyframes fadeInBackground {
+      from { opacity: 0; }
+      to { opacity: 0.3; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fadeInBackground 4s ease-in forwards;
+      z-index: -1;
+    }
+
+    @keyframes colorCycle {
+      0% { color: red; }
+      25% { color: purple; }
+      50% { color: orange; }
+      75% { color: green; }
+      100% { color: red; }
+    }
+
+    header {
+      background-color: transparent;
+      padding: 1.5em 0;
+      text-align: center;
+    }
+
+    header h1 {
+      animation: colorCycle 2s linear infinite;
+      transition: transform 0.3s ease;
+    }
+
+    header h1:hover {
+      transform: scale(1.3);
+    }
+
+    nav {
+      background-color: rgba(34, 34, 59, 0.9);
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 1em;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(74, 78, 105, 0.9);
+    }
+
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      margin-top: 1em;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .gallery a img,
+    .gallery img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery a:hover img,
+    .gallery img:hover {
+      transform: scale(1.2); /* 20% bigger */
+    }
+
+    footer {
+      background-color: rgba(74, 78, 105, 0.9);
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
+
+  <script>
+    function accessSecret() {
+      const correctPassword = "ltml"; // Change this to your desired password
+      const userInput = prompt("Enter the password to access the secret page:");
+
+      if (userInput === correctPassword) {
+        window.location.href = "mygf.html"; // Change to your secret page URL
+      } else if (userInput !== null) {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to Liechen's Website</h1>
+    <p>Liechen .D Ignoition</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>Lucianos' Website hondt</h2>
+    <p>Hey there, welcome to my website. It's great to have you here! If you need to contact me or just want to mess around, don't hesitate to email me :)</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <a href="the-owens.html">
+        <img src="friends.png" alt="The Owens" />
+      </a>
+      <img src="business.png" alt="Business" />
+      <!-- Secret image wrapped in a clickable link -->
+      <a href="#" onclick="accessSecret(); return false;">
+        <img src="secret.png" alt="Secret" />
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at: <strong>Selindaliechen@gmail.com</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Liechen. All rights reserved.</p>
+  </footer>
+</body>
+</html>

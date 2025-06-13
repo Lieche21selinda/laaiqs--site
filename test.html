@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Secret Click</title>
+  <script>
+    function accessSecret() {
+      alert("Clicked! Prompt will show now.");
+      const correctPassword = "unicorn123";
+      const userInput = prompt("Enter the password to access the secret page:");
+      if (userInput === correctPassword) {
+        alert("Correct password! Redirecting...");
+        // window.location.href = "secret-page.html";
+      } else if (userInput !== null) {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Click the secret image below:</h1>
+  <a href="#" onclick="accessSecret(); return false;">
+    <img src="https://via.placeholder.com/150?text=Secret" alt="Secret" style="cursor:pointer;" />
+  </a>
+</body>
+</html>
